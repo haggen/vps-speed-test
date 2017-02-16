@@ -1,14 +1,4 @@
 #!/usr/bin/env bash
-
-read -r -d '' output <<EOF
-time_connect: %{time_connect}s
-time_namelookup: %{time_namelookup}s
-time_pretransfer: %{time_pretransfer}
-time_starttransfer: %{time_starttransfer}s
-time_redirect: %{time_redirect}s
-time_total: %{time_total}s
-EOF
-
 printf "Domain\tLatency\tSpeed\tLookup\tTime\n"
 cat URL | while read url; do
   domain=${url%/*}
